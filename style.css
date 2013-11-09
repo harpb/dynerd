@@ -1,0 +1,11 @@
+body{
+    /*background: #eee;*/
+}
+.mobile-container{
+    width: 320px;
+    height: 460px;
+    margin: auto;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+}

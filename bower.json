@@ -1,0 +1,18 @@
+{
+  "name": "dynerd",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0",
+    "restangular": "~1.1.7",
+    "semantic-ui": "*",
+    "underscore": "~1.5.2"
+  }
+}
