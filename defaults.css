@@ -39,3 +39,70 @@ ul.list {
 ul.list li {
     list-style-position: outside;
 }
+
+/****************************************************************
+** UTILITIES
+***************************************************************/
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.clear {
+    clear: both;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+.align-justify {
+    text-align: justify;
+}
+.push-down {
+    margin-bottom: 1em;
+}
+.push-left {
+    margin-left: 1em;
+}
+.push-right {
+    margin-right: 1em;
+}
+.push-up {
+    margin-top: 1em;
+}
+.scrollable {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+.clickable {
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    #table-of-content {
+        margin-left: 0px;
+        border-left-width: 1px;
+    }
+}
+@media (min-width: 1600px) {
+    #table-of-content {
+        margin-left: -41px;
+    }
+}
+.no-margin {
+    margin: 0px !important;
+}
+.no-padding {
+    padding: 0px !important;
+}
+.no-border-radius {
+    border-radius: 0px;
+}
+code {
+    overflow-x: auto;
+}
