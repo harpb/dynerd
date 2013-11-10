@@ -20,29 +20,91 @@
     <script src="js/dynerd-controller.js"></script>
 </head>
 <body ng-controller="DynerdListCtrl" ng-app="dynerdApp">
-<div class="mobile-container">
-    <h4 class="ui inverted black block header">
-        Dynerd
-    </h4>
-    <div>
-        <div class="ui huge star rating active">
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
+<div class="mobile-container" ng-switch="selectedView">
+    <header class="ui " ng-show="showMenu">
+        <div ng-switch-when="TINDER" class="ui middle aligned column grid">
+            <div class="ui fluid row">
+                <div class="ui three wide center aligned column">
+                    <i class="large {{ tinderChallenge.iconClass }} icon"></i>
+                </div>
+                <div class="ui ten wide center aligned column">
+                    <h3 class="ui header no-margin">
+                        {{ tinderChallenge.title }} Challenge
+                    </h3>
+                </div>
+                <div class="ui three wide center aligned column">
+                    <a class="mini ui button" ng-click="eatView()">Done</a>
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="EAT">
+            Eat
+        </div>
+        <div ng-switch-when="ATE">
+            Ate
+        </div>
+    </header>
+
+    <!-- TINDER VIEW -->
+    <div ng-switch-when="TINDER" class="tinder">
+        <img src="{{ tinderChallenge.challenger.largeThumbnailUrl }}"/>
+        <img src="{{ tinderChallenge.contender.largeThumbnailUrl }}"/>
+        <div class="align-center ">
+            <div class="medium text small bottom-margin">Accept Challenge?</div>
+            <div class="ui no-margin column grid">
+                <div class="one wide column"></div>
+                <div class="six wide column">
+                    <div class="ui fluid large red icon button" ng-click="declineChallenge()">
+                        <i class="icon ban circle"></i>
+                    </div>
+                </div>
+                <div class="two wide column"></div>
+                <div class="six wide column">
+                    <div class="fluid ui large green icon button" ng-click="acceptChallenge()">
+                        <i class="icon check"></i>
+                    </div>
+                </div>
+                <div class="one wide column"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eat VIEW -->
+    <div ng-switch-when="EAT" class="eat-view">
+        <div class="ui middle aligned column grid">
+            <div class="ui fluid row challenge" ng-repeat="challenge in myChallenges">
+                <div class="ui four wide center aligned column ">
+                    <div class="ui vertical fluid center">
+                        <i class="large {{ challenge.iconClass }} icon"></i>
+                    </div>
+                </div>
+                <div class="ui six wide column">
+                    <img src="{{ challenge.contender.thumbnailUrl }}">
+                </div>
+                <div class="ui six wide column">
+                    <img src="{{ challenge.challenger.thumbnailUrl }}">
+                </div>
+            </div>
         </div>
 
     </div>
-    <footer class="ui no-margin two column grid">
+
+    <!-- ATE VIEW -->
+    <div ng-switch-when="ATE">
+        I already ate
+    </div>
+
+
+    <!-- FOOTER VIEW -->
+    <footer class="ui no-margin two column grid" ng-show="showFooter">
         <div class="column">
-            <div class="fluid ui icon button">
+            <div class="fluid ui icon button" ng-click="eatView()">
                 <i class="icon settings"></i>
                 Eat
             </div>
         </div>
         <div class="column">
-            <div class="fluid ui icon button">
+            <div class="fluid ui icon button" ng-click="ateView()">
                 <i class="icon clock"></i>
                 Ate
             </div>

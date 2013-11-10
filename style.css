@@ -6,10 +6,35 @@ html, body{
     position: relative;
     width: 320px;
     height: 460px;
-    margin: auto;
+    margin: 1em auto 0 auto;
     background: #fafafa;
     border: 1px solid #ddd;
     border-radius: 1px;
+}
+
+.mobile-container header div{
+    height: 40px;
+    /*border: 1px solid blue;*/
+}
+.mobile-container .row
+, .mobile-container .column{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.mobile-container header .column{
+    padding-top: 3px !important;
+}
+
+.mobile-container header{
+    background: #fff;
+}
+.mobile-container header .header{
+    margin-top: 2px !important;
+
+}
+.mobile-container .column{
+    /*border: 1px solid red !important;*/
 }
 
 .ui.gradient.blue{
@@ -38,4 +63,20 @@ html, body{
     width: 100%;
     position: absolute;
     bottom: 0px;
+}
+
+.eat-view .row{
+    height: 125px;
+}
+
+.medium.text{
+    font-size: 18px;
+}
+
+.small.bottom-margin{
+    margin-bottom: .2em !important;
+}
+
+.challenge.row{
+    margin-bottom: 3px !important;
 }
