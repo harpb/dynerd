@@ -8,212 +8,421 @@
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
     <!-- CSS -->
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="bower_components/semantic-ui/build/packaged/css/semantic.min.css"/>
     <link rel="stylesheet" href="defaults.css"/>
-    <link rel="stylesheet" href="style.css"/>
 
     <!-- JavaScript for the world-->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/semantic-ui/build/packaged/javascript/semantic.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
     <script src="js/dynerd-controller.js"></script>
 </head>
 <body ng-controller="DynerdListCtrl" ng-app="dynerdApp">
-<div class="mobile-container" ng-switch="selectedView">
-    <header class="ui " ng-show="showMenu">
-        <div ng-switch-when="TINDER" class="ui middle aligned column grid">
-            <div class="ui fluid row">
-                <div class="ui three wide center aligned column">
-                    <i class="large {{ tinderChallenge.iconClass }} icon"></i>
-                </div>
-                <div class="ui ten wide center aligned column">
-                    <h3 class="ui header no-margin">
-                        {{ tinderChallenge.title }} Challenge
-                    </h3>
-                </div>
-                <div class="ui three wide center aligned column">
-                    <a class="mini ui button" ng-click="eatView()">Done</a>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="EAT" class="ui middle aligned column grid">
-            <div class="ui fluid row">
-                <div class="ui three wide center aligned column">
-                </div>
-                <div class="ui ten wide center aligned column">
-                    <h3 class="ui header no-margin">
-                        My Dynerds
-                    </h3>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="DETAILS" ng-switch="justCompleted"  class="ui middle aligned column grid">
-            <div class="ui fluid row" ng-switch-when="true">
-                <div class="ui three wide center aligned column">
-                    <i class="large {{ openedChallenge.iconClass }} icon"></i>
-                </div>
-                <div class="ui ten wide center aligned column">
-                    <h3 class="ui header no-margin">
-                        Dynerd Obtained!
-                    </h3>
-                </div>
-                <div class="ui three wide center aligned column">
-                    <a class="mini ui button" ng-click="eatView()">Done</a>
-                </div>
-            </div>
-            <div class="ui fluid row" ng-switch-default>
-                <div class="ui three wide center aligned column">
-                    <a class="mini ui button" ng-click="ateView()">Back</a>
-                </div>
-                <div class="ui ten wide center aligned column">
-                    <h3 class="ui header no-margin">
-                        Tasty Details
-                    </h3>
-                </div>
-                <div class="ui three wide center aligned column">
-                    <i class="large {{ openedChallenge.iconClass }} icon"></i>
-                </div>
-            </div>
-        </div>
-        <div ng-switch-when="ATE" class="ui middle aligned column grid">
-            <div class="ui fluid row">
-                <div class="ui three wide center aligned column">
-                </div>
-                <div class="ui ten wide center aligned column">
-                    <h3 class="ui header no-margin">
-                        Dynerds Obtained
-                    </h3>
-                </div>
-                <!--<div class="ui three wide center aligned column">-->
-                <!--<a class="mini ui button" ng-click="eatView()">Done</a>-->
-                <!--</div>-->
-            </div>
-        </div>
-    </header>
 
-    <!-- TINDER VIEW -->
-    <div ng-switch-when="TINDER" class="tinder">
-        <img src="{{ tinderChallenge.challenger.largeThumbnailUrl }}"/>
-        <img src="{{ tinderChallenge.contender.largeThumbnailUrl }}"/>
-        <div class="align-center ">
-            <div class="medium text small bottom-margin">Accept Challenge?</div>
-            <div class="ui no-margin column grid">
-                <div class="one wide column"></div>
-                <div class="six wide column">
-                    <div class="ui fluid large red icon button" ng-click="declineChallenge()">
-                        <i class="icon ban circle"></i>
+<div class="mobile-wrapper">
+    <div class="mobile-container" ng-switch="selectedView">
+        <header class="ui" ng-show="showMenu">
+            <div ng-switch-when="TINDER" class="ui middle aligned column grid">
+                <div class="ui fluid row">
+                    <div class="ui three wide center aligned column">
+                        <i class="large {{ openChallenge.iconClass }} icon"></i>
+                    </div>
+                    <div class="ui ten wide center aligned column">
+                        <h3 class="ui header no-margin">
+                            {{ openChallenge.title }} Challenge
+                        </h3>
+                    </div>
+                    <div class="ui three wide center aligned column">
+                        <a class="mini blue ui button" ng-click="eatView()">Done</a>
                     </div>
                 </div>
-                <div class="two wide column"></div>
-                <div class="six wide column">
-                    <div class="fluid ui large green icon button" ng-click="acceptChallenge()">
-                        <i class="icon check"></i>
+            </div>
+            <div ng-switch-when="EAT" class="ui middle aligned column grid">
+                <div class="ui fluid row">
+                    <div class="ui three wide center aligned column">
+                    </div>
+                    <div class="ui ten wide center aligned column">
+                        <h3 class="ui header no-margin">
+                            My Dynerds
+                        </h3>
                     </div>
                 </div>
-                <div class="one wide column"></div>
             </div>
-        </div>
-    </div>
-
-    <!-- Eat VIEW -->
-    <div ng-switch-when="EAT" class="eat-view">
-        <div class="ui middle aligned column grid">
-            <div class="ui fluid row challenge"
-                 ng-click="rateChallengeView(challenge)"
-                 ng-repeat="challenge in myChallenges">
-                <div class="ui four wide center aligned column ">
-                    <div class="ui vertical fluid center">
-                        <i class="large {{ challenge.iconClass }} icon"></i>
+            <div ng-switch-when="DETAILS" ng-switch="justCompleted"  class="ui middle aligned column grid">
+                <div class="ui fluid row" ng-switch-when="true">
+                    <div class="ui three wide center aligned column">
+                        <i class="large {{ activeRating.challenge.iconClass }} icon"></i>
+                    </div>
+                    <div class="ui ten wide center aligned column">
+                        <h3 class="ui header no-margin">
+                            Dynerd Obtained!
+                        </h3>
+                    </div>
+                    <div class="ui three wide center aligned column">
+                        <a class="mini blue ui button" ng-click="eatView()">Done</a>
                     </div>
                 </div>
-                <div class="ui six wide column">
-                    <img src="{{ challenge.contender.thumbnailUrl }}">
-                </div>
-                <div class="ui six wide column">
-                    <img src="{{ challenge.challenger.thumbnailUrl }}">
-                </div>
-            </div>
-            <div class="ui fluid row challenge"
-                 ng-click="tinderView()"
-                 ng-repeat="num in myChallengeToAdd()">
-                <div class="ui four wide center aligned column ">
-                    <div class="ui vertical fluid center">
-                        <i class="large coffee icon"></i>
+                <div class="ui fluid row" ng-switch-default>
+                    <div class="ui three wide center aligned column">
+                        <a class="mini blue ui button" ng-click="ateView()">Back</a>
+                    </div>
+                    <div class="ui ten wide center aligned column">
+                        <h3 class="ui header no-margin">
+                            Tasty Details
+                        </h3>
+                    </div>
+                    <div class="ui three wide center aligned column">
+                        <i class="large {{ activeRating.challenge.iconClass }} icon"></i>
                     </div>
                 </div>
-                <div class="ui twelve wide column">
-                    Add Dynerd <i class="large coffee icon"></i>
+            </div>
+            <div ng-switch-when="ATE" class="ui middle aligned column grid">
+                <div class="ui fluid row">
+                    <div class="ui three wide center aligned column">
+                    </div>
+                    <div class="ui ten wide center aligned column">
+                        <h3 class="ui header no-margin">
+                            Dynerds Obtained
+                        </h3>
+                    </div>
+                    <!--<div class="ui three wide center aligned column">-->
+                    <!--<a class="mini ui button" ng-click="eatView()">Done</a>-->
+                    <!--</div>-->
                 </div>
             </div>
-        </div>
-    </div>
+        </header>
 
-
-    <!-- Challenge Open VIEW -->
-    <div ng-switch-when="RATE_CHALLENGE" class="rate-challenge">
-        <div class="ui huge star rating active align-center">
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-        </div>
-        <img src="{{ openedChallenge.challenger.largeThumbnailUrl }}"/>
-        <img src="{{ openedChallenge.contender.largeThumbnailUrl }}"/>
-        <div class="ui align-center huge star rating active">
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-            <i class="icon"></i>
-        </div>
-    </div>
-
-    <!-- Details View -->
-    <div ng-switch-when="DETAILS" class="tinder">
-        <img src="{{ openedChallenge.challenger.largeThumbnailUrl }}"/>
-        <img src="{{ openedChallenge.contender.largeThumbnailUrl }}"/>
-    </div>
-
-    <!-- ATE VIEW -->
-    <div ng-switch-when="ATE" class="ate-view">
-        <div class="ui middle aligned column grid">
-            <div class="ui fluid row challenge"
-                 ng-click="detailsView(challenge)"
-                 ng-repeat="challenge in completedChallenges">
-                <div class="ui four wide center aligned column ">
-                    <div class="ui vertical fluid center">
-                        <i class="large {{ challenge.iconClass }} icon"></i>
+        <!-- TINDER VIEW -->
+        <div ng-switch-when="TINDER" class="tinder-view">
+            <div ng-show="openChallenge">
+                <div class="ui clickable cube shape" semantic-cube>
+                    <div class="sides">
+                        <div class="active side">
+                            <div class="content">
+                                <div class="center">
+                                    <img src="{{ openChallenge.challenger.largeThumbnailUrl }}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side ui inverted segment center no-margin">
+                            <h1 class="ui header no-margin">{{ openChallenge.challenger.title }}</h1>
+                            <p>{{ openChallenge.challenger.address }}</p>
+                            <p>
+                                <a href="#{{ openChallenge.challenger.phone }}" class="ui mini basic button ">
+                                    <i class="phone icon"></i>
+                                    {{ openChallenge.challenger.phone }}
+                                </a>
+                                <a href="http://{{ openChallenge.challenger.website }}" class="ui mini basic button " target="_blank">
+                                    <i class="external url icon"></i>
+                                    Website
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="ui six wide column">
-                    <img src="{{ challenge.contender.smallThumbnailUrl }}">
+                <div class="ui clickable cube shape" semantic-cube>
+                    <div class="sides">
+                        <div class="active side">
+                            <div class="content">
+                                <div class="center">
+                                    <img src="{{ openChallenge.contender.largeThumbnailUrl }}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side ui inverted segment center no-margin">
+                            <h1 class="ui header no-margin">{{ openChallenge.contender.title }}</h1>
+                            <p>{{ openChallenge.contender.address }}</p>
+                            <p>
+                                <a href="#{{ openChallenge.contender.phone }}" class="ui mini basic button ">
+                                    <i class="phone icon"></i>
+                                    {{ openChallenge.contender.phone }}
+                                </a>
+                                <a href="http://{{ openChallenge.contender.website }}" class="ui mini basic button " target="_blank">
+                                    <i class="external url icon"></i>
+                                    Website
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui six wide column">
-                    <img src="{{ challenge.challenger.smallThumbnailUrl }}">
+                <div class="align-center ">
+                    <div class="medium text small bottom-margin">Accept Challenge?</div>
+                    <div class="ui no-margin column grid">
+                        <div class="one wide column"></div>
+                        <div class="six wide column">
+                            <div class="ui fluid large red icon button" ng-click="declineChallenge()">
+                                <i class="icon ban circle"></i>
+                            </div>
+                        </div>
+                        <div class="two wide column"></div>
+                        <div class="six wide column">
+                            <div class="fluid ui large green icon button" ng-click="acceptChallenge()">
+                                <i class="icon check"></i>
+                            </div>
+                        </div>
+                        <div class="one wide column"></div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!openChallenge" class="ui basic segment align-center">
+                <h2>You have browsed all of the challenges.<Br/> Awesome stuff~</h2>
+            </div>
+        </div>
+
+        <!-- Eat VIEW -->
+        <div ng-switch-when="EAT" class="eat-view">
+            <div class="ui middle aligned column grid">
+                <div class="ui fluid row challenge"
+                     ng-click="rateChallengeView(rating)"
+                     ng-repeat="rating in activeRatings()">
+                    <div class="ui four wide center aligned column ">
+                        <div class="item-icon">
+                            <i class="large {{ rating.challenge.iconClass }} icon"></i>
+                        </div>
+                    </div>
+                    <div class="ui six wide column">
+                        <img src="{{ rating.challenge.contender.thumbnailUrl }}">
+                    </div>
+                    <div class="ui clearing column">
+                        <i class="large circular inverted blue bolt icon"></i>
+                    </div>
+                    <div class="ui six wide column">
+                        <img src="{{ rating.challenge.challenger.thumbnailUrl }}">
+                    </div>
+                </div>
+                <div class="ui fluid vertical menu no-margin">
+                    <a class="ui item vertical-align-middle"
+                       ng-click="tinderView()"
+                       ng-repeat="num in myChallengeToAdd()">
+                        <i class="right arrow icon"></i>
+                        Add Dynerd
+                    </a>
                 </div>
             </div>
         </div>
+
+
+        <!-- Challenge Open VIEW -->
+        <div ng-switch-when="RATE_CHALLENGE" class="rate-challenge" ng-click="checkRatingCompleted()">
+            <div class="ui huge star rating active align-center"
+                 semantic-rating
+                 ng-model="activeRating.amount.challenger">
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+            </div>
+            <div class="ui clickable cube shape" semantic-cube>
+                <div class="sides">
+                    <div class="active side">
+                        <div class="content">
+                            <div class="center">
+                                <img src="{{ activeRating.challenge.challenger.largeThumbnailUrl }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side ui inverted segment center no-margin">
+                        <h1 class="ui header no-margin">{{ activeRating.challenge.challenger.title }}</h1>
+                        <p>{{ activeRating.challenge.challenger.address }}</p>
+                        <p>
+                            <a href="#{{ activeRating.challenge.challenger.phone }}" class="ui mini basic button ">
+                                <i class="phone icon"></i>
+                                {{ activeRating.challenge.challenger.phone }}
+                            </a>
+                            <a href="http://{{ activeRating.challenge.challenger.website }}" class="ui mini basic button " target="_blank">
+                                <i class="external url icon"></i>
+                                Website
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui clickable cube shape" semantic-cube>
+                <div class="sides">
+                    <div class="active side">
+                        <div class="content">
+                            <div class="center">
+                                <img src="{{ activeRating.challenge.contender.largeThumbnailUrl }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side ui inverted segment center no-margin">
+                        <h1 class="ui header no-margin">{{ activeRating.challenge.contender.title }}</h1>
+                        <p>{{ activeRating.challenge.contender.address }}</p>
+                        <p>
+                            <a href="#{{ activeRating.challenge.contender.phone }}" class="ui mini basic button ">
+                                <i class="phone icon"></i>
+                                {{ activeRating.challenge.contender.phone }}
+                            </a>
+                            <a href="http://{{ activeRating.challenge.contender.website }}" class="ui mini basic button " target="_blank">
+                                <i class="external url icon"></i>
+                                Website
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui align-center huge star rating active"
+                 semantic-rating
+                 ng-model="activeRating.amount.contender">
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+            </div>
+        </div>
+
+        <!-- Details View -->
+        <div ng-switch-when="DETAILS" class="tinder">
+            <div class="ui clickable cube shape" semantic-cube>
+                <div class="sides">
+                    <div class="active side">
+                        <div class="content">
+                            <div class="center">
+                                <div class="ui clearing rating-stats no-margin">
+                                    <div class="item no-margin">
+                                        <div class="header">
+                                            <div class="meta">{{ activeRating.amount.challenger_created }}</div>
+                                            <div class="name">{{ activeRating.challenge.challenger.title }}</div>
+                                        </div>
+                                        <div class="ui two column grid content">
+                                            <div class="ui column">
+                                                <div class="align-center">You</div>
+                                                <div class="align-center">
+                                                    <i class="circular inverted teal check icon" ng-if="!activeRating.contenderWin"></i>
+                                                    <i class="circular inverted red close icon" ng-if="activeRating.contenderWin"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ui column">
+                                                <div class="align-center large bottom-margin">Community</div>
+                                                <div class="align-center large bottom-margin">
+                                                    65% <i class="bolt icon"></i> vendor
+                                                </div>
+                                                <div class="align-center large bottom-margin">
+                                                    86% <i class="{{ activeRating.challenge.iconClass }} icon"></i>
+                                                    all {{ activeRating.challenge.title }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{{ activeRating.challenge.challenger.largeThumbnailUrl }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side ui inverted segment center no-margin">
+                        <h1 class="ui header no-margin">{{ activeRating.challenge.challenger.title }}</h1>
+                        <p>{{ activeRating.challenge.challenger.address }}</p>
+                        <p>
+                            <a href="#{{ activeRating.challenge.challenger.phone }}" class="ui mini basic button ">
+                                <i class="phone icon"></i>
+                                {{ activeRating.challenge.challenger.phone }}
+                            </a>
+                            <a href="http://{{ activeRating.challenge.challenger.website }}" class="ui mini basic button " target="_blank">
+                                <i class="external url icon"></i>
+                                Website
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui clickable cube shape" semantic-cube>
+                <div class="sides">
+                    <div class="active side">
+                        <div class="content">
+                            <div class="center">
+                                <div class="ui clearing rating-stats no-margin">
+                                    <div class="item no-margin">
+                                        <div class="header">
+                                            <div class="meta">{{ activeRating.amount.contender_created }}</div>
+                                            <div class="name">{{ activeRating.challenge.contender.title }}</div>
+                                        </div>
+                                        <div class="ui two column grid content">
+                                            <div class="ui column">
+                                                <div class="align-center">You</div>
+                                                <div class="align-center">
+                                                    <i class="circular inverted teal check icon" ng-if="activeRating.contenderWin"></i>
+                                                    <i class="circular inverted red remove icon" ng-if="!activeRating.contenderWin"></i>
+                                                </div>
+                                            </div>
+                                            <div class="ui column">
+                                                <div class="align-center large bottom-margin">Community</div>
+                                                <div class="align-center large bottom-margin">
+                                                    65% <i class="bolt icon"></i> vendor
+                                                </div>
+                                                <div class="align-center large bottom-margin">
+                                                    86% <i class="{{ activeRating.challenge.iconClass }} icon"></i>
+                                                    all {{ activeRating.challenge.title }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{{ activeRating.challenge.contender.largeThumbnailUrl }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side ui inverted segment center no-margin">
+                        <h1 class="ui header no-margin">{{ activeRating.challenge.contender.title }}</h1>
+                        <p>{{ activeRating.challenge.contender.address }}</p>
+                        <p>
+                            <a href="#{{ activeRating.challenge.contender.phone }}" class="ui mini basic button ">
+                                <i class="phone icon"></i>
+                                {{ activeRating.challenge.contender.phone }}
+                            </a>
+                            <a href="http://{{ activeRating.challenge.contender.website }}" class="ui mini basic button " target="_blank">
+                                <i class="external url icon"></i>
+                                Website
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATE VIEW -->
+        <div ng-switch-when="ATE" class="ate-view">
+            <div class="ui middle aligned column grid">
+                <div class="ui fluid row challenge"
+                     ng-click="detailsView(rating)"
+                     ng-repeat="rating in completedRatings()">
+                    <div class="ui four wide center aligned column ">
+                        <div class="ui vertical fluid center">
+                            <i class="large {{ rating.challenge.iconClass }} icon"></i>
+                        </div>
+                    </div>
+                    <div class="ui six wide column">
+                        <img src="{{ rating.challenge.contender.smallThumbnailUrl }}">
+                    </div>
+                    <div class="ui six wide column">
+                        <img src="{{ rating.challenge.challenger.smallThumbnailUrl }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER VIEW -->
+        <footer class="ui no-margin two column grid" ng-show="showFooter">
+            <div class="column">
+                <div class="fluid ui icon button" ng-click="eatView()">
+                    <i class="icon settings"></i>
+                    Eat
+                </div>
+            </div>
+            <div class="column">
+                <div class="fluid ui icon button" ng-click="ateView()">
+                    <i class="icon clock"></i>
+                    Ate
+                </div>
+            </div>
+        </footer>
     </div>
-
-
-    <!-- FOOTER VIEW -->
-    <footer class="ui no-margin two column grid" ng-show="showFooter">
-        <div class="column">
-            <div class="fluid ui icon button" ng-click="eatView()">
-                <i class="icon settings"></i>
-                Eat
-            </div>
-        </div>
-        <div class="column">
-            <div class="fluid ui icon button" ng-click="ateView()">
-                <i class="icon clock"></i>
-                Ate
-            </div>
-        </div>
-    </footer>
 </div>
 </body>
 </html>
