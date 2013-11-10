@@ -1,4 +1,4 @@
-DynerdListCtrl = function($scope) {
+DynerdListCtrl = function($scope, $localStorage) {
     console.info('Scope', $scope)
     var EAT = 'EAT'
         , ATE = 'ATE'
@@ -9,6 +9,11 @@ DynerdListCtrl = function($scope) {
     $scope.showMenu = true;
     $scope.showFooter = false;
     MAX_MY_CHALLENGES = 3
+
+//    $scope.$storage = $localStorage.$default({
+//        restaurants: restaurants,
+//        challenges: $scope.challenges
+//    });
 
     var placeHold = 'http://placehold.it/120x125'
     var smallPlaceHold = 'http://placehold.it/120x62'
@@ -204,7 +209,7 @@ DynerdListCtrl = function($scope) {
 /**
  * Dynerd Module
  */
-dynerdApp = angular.module('dynerdApp', []);
+dynerdApp = angular.module('dynerdApp', [$localStorage, $sessionStorage]);
 
 //whoisApp.config(function(RestangularProvider) {
 //    return RestangularProvider.setBaseUrl('/scrapbook/api/v1/');
