@@ -1,6 +1,6 @@
 html,
 body {
-  background: #30404f;
+  background: #333;
   height: 100%;
 }
 .mobile-wrapper {
@@ -10,6 +10,11 @@ body {
 
   margin: auto;
   padding-top: 20px;
+}
+.center.logo {
+  position: relative;
+  display: block;
+  margin: auto;
 }
 .mobile-container {
   position: relative;
@@ -21,7 +26,6 @@ body {
 
   /*border: 1px solid black;*/
 
-  outline: 10px solid #222;
   border-radius: 1px;
 }
 .mobile-container header div {
