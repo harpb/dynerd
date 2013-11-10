@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511f5cde-93a0-4afb-b79e-86ffcefc1162" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/Thumbs.db" afterPath="$PROJECT_DIR$/images/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaults.css" afterPath="$PROJECT_DIR$/defaults.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dynerd-controller.js" afterPath="$PROJECT_DIR$/js/dynerd-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dynerd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,13 +25,13 @@
     <favorites_list name="dynerd" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.65682656">
+    <splitter split-orientation="horizontal" split-proportion="0.39360395">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="209" column="12" selection-start="10558" selection-end="10558" vertical-scroll-proportion="-3.4958084" vertical-offset="6472" max-vertical-offset="7361">
+                <state line="209" column="12" selection-start="10558" selection-end="10558" vertical-scroll-proportion="-3.5042017" vertical-offset="6472" max-vertical-offset="7361">
                   <folding />
                 </state>
               </provider>
@@ -48,7 +42,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state line="189" column="23" selection-start="6943" selection-end="6952" vertical-scroll-proportion="-6.12" vertical-offset="2907" max-vertical-offset="7412">
                   <folding>
-                    <marker date="1384123775120" expanded="true" signature="12053:12174" placeholder="//..." />
+                    <marker date="1384124615201" expanded="true" signature="12051:12174" placeholder="//..." />
                   </folding>
                 </state>
               </provider>
@@ -58,19 +52,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="dynerd-controller.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="dynerd-controller.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="186" column="32" selection-start="6860" selection-end="6860" vertical-scroll-proportion="-9.18" vertical-offset="2703" max-vertical-offset="7412">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/style.less">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="186" column="21" selection-start="4164" selection-end="4164" vertical-scroll-proportion="0.89171976" vertical-offset="2462" max-vertical-offset="3315">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7412">
                   <folding />
                 </state>
               </provider>
@@ -107,9 +92,9 @@
       <list>
         <option value="$PROJECT_DIR$/defaults.css" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/js/dynerd-controller.js" />
         <option value="$PROJECT_DIR$/style.less" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/dynerd-controller.js" />
       </list>
     </option>
   </component>
@@ -291,9 +276,7 @@
     <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="26" selection-start="799" selection-end="811" vertical-scroll-proportion="0.0" vertical-offset="223" max-vertical-offset="3808">
-          <folding>
-            <marker date="1384123775120" expanded="true" signature="12053:12174" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -318,25 +301,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="23" selection-start="6943" selection-end="6952" vertical-scroll-proportion="-6.12" vertical-offset="2907" max-vertical-offset="7412">
-          <folding>
-            <marker date="1384123775120" expanded="true" signature="12053:12174" placeholder="//..." />
-          </folding>
+        <state line="209" column="12" selection-start="10558" selection-end="10558" vertical-scroll-proportion="-3.5042017" vertical-offset="6472" max-vertical-offset="7361">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="21" selection-start="4164" selection-end="4164" vertical-scroll-proportion="0.89171976" vertical-offset="2462" max-vertical-offset="3315">
+        <state line="186" column="21" selection-start="4164" selection-end="4164" vertical-scroll-proportion="0.89399743" vertical-offset="2462" max-vertical-offset="3315">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="12" selection-start="10558" selection-end="10558" vertical-scroll-proportion="-3.4958084" vertical-offset="6472" max-vertical-offset="7361">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7412">
           <folding />
         </state>
       </provider>

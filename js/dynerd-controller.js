@@ -351,10 +351,10 @@ var DynerdListCtrl = function($scope, $localStorage, $sessionStorage) {
     /**
      * Initialize
      */
-//    $scope.tinderView()
+    $scope.tinderView()
 //    $scope.eatView()
 //    $scope.rateChallengeView($scope.ratings[0])
-    $scope.completedChallenge($scope.ratings[0])
+//    $scope.completedChallenge($scope.ratings[0])
 //      $scope.ateView()
 }
 
