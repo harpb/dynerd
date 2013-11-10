@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511f5cde-93a0-4afb-b79e-86ffcefc1162" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/defaults.css" afterPath="$PROJECT_DIR$/defaults.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dynerd-controller.js" afterPath="$PROJECT_DIR$/js/dynerd-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dynerd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,13 +26,13 @@
     <favorites_list name="dynerd" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49522156">
+    <splitter split-orientation="horizontal" split-proportion="0.4951601">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="46" selection-start="3267" selection-end="3276" vertical-scroll-proportion="0.3109405" vertical-offset="1096" max-vertical-offset="2040">
+                <state line="145" column="53" selection-start="6706" selection-end="6712" vertical-scroll-proportion="0.7715931" vertical-offset="2063" max-vertical-offset="3791">
                   <folding />
                 </state>
               </provider>
@@ -53,19 +51,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="79" column="14" selection-start="2373" selection-end="2373" vertical-scroll-proportion="0.8631791" vertical-offset="914" max-vertical-offset="1479">
+                <state line="72" column="14" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="1063" max-vertical-offset="1683">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dynerd-controller.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="dynerd-controller.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="115" column="1" selection-start="3062" selection-end="3062" vertical-scroll-proportion="-7.82" vertical-offset="1564" max-vertical-offset="2346">
+                <state line="25" column="26" selection-start="799" selection-end="811" vertical-scroll-proportion="0.39607844" vertical-offset="223" max-vertical-offset="3808">
                   <folding />
                 </state>
               </provider>
@@ -92,9 +90,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/defaults.css" />
+        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/js/dynerd-controller.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -254,23 +252,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="1" selection-start="3062" selection-end="3062" vertical-scroll-proportion="-7.82" vertical-offset="1564" max-vertical-offset="2346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="46" selection-start="3267" selection-end="3276" vertical-scroll-proportion="0.3109405" vertical-offset="1096" max-vertical-offset="2040">
+        <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.33272395" vertical-offset="2062" max-vertical-offset="8228">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="14" selection-start="2373" selection-end="2373" vertical-scroll-proportion="0.8631791" vertical-offset="914" max-vertical-offset="1479">
+        <state line="72" column="14" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="977" max-vertical-offset="1683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="53" selection-start="6706" selection-end="6712" vertical-scroll-proportion="0.7715931" vertical-offset="2063" max-vertical-offset="3791">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dynerd-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="26" selection-start="799" selection-end="811" vertical-scroll-proportion="0.39607844" vertical-offset="223" max-vertical-offset="3808">
           <folding />
         </state>
       </provider>

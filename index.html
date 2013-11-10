@@ -37,11 +37,58 @@
                 </div>
             </div>
         </div>
-        <div ng-switch-when="EAT">
-            Eat
+        <div ng-switch-when="EAT" class="ui middle aligned column grid">
+            <div class="ui fluid row">
+                <div class="ui three wide center aligned column">
+                </div>
+                <div class="ui ten wide center aligned column">
+                    <h3 class="ui header no-margin">
+                        My Dynerds
+                    </h3>
+                </div>
+            </div>
         </div>
-        <div ng-switch-when="ATE">
-            Ate
+        <div ng-switch-when="DETAILS" ng-switch="justCompleted"  class="ui middle aligned column grid">
+            <div class="ui fluid row" ng-switch-when="true">
+                <div class="ui three wide center aligned column">
+                    <i class="large {{ openedChallenge.iconClass }} icon"></i>
+                </div>
+                <div class="ui ten wide center aligned column">
+                    <h3 class="ui header no-margin">
+                        Dynerd Obtained!
+                    </h3>
+                </div>
+                <div class="ui three wide center aligned column">
+                    <a class="mini ui button" ng-click="eatView()">Done</a>
+                </div>
+            </div>
+            <div class="ui fluid row" ng-switch-default>
+                <div class="ui three wide center aligned column">
+                    <a class="mini ui button" ng-click="ateView()">Back</a>
+                </div>
+                <div class="ui ten wide center aligned column">
+                    <h3 class="ui header no-margin">
+                        Tasty Details
+                    </h3>
+                </div>
+                <div class="ui three wide center aligned column">
+                    <i class="large {{ openedChallenge.iconClass }} icon"></i>
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="ATE" class="ui middle aligned column grid">
+            <div class="ui fluid row">
+                <div class="ui three wide center aligned column">
+                </div>
+                <div class="ui ten wide center aligned column">
+                    <h3 class="ui header no-margin">
+                        Dynerds Obtained
+                    </h3>
+                </div>
+                <!--<div class="ui three wide center aligned column">-->
+                <!--<a class="mini ui button" ng-click="eatView()">Done</a>-->
+                <!--</div>-->
+            </div>
         </div>
     </header>
 
@@ -72,7 +119,9 @@
     <!-- Eat VIEW -->
     <div ng-switch-when="EAT" class="eat-view">
         <div class="ui middle aligned column grid">
-            <div class="ui fluid row challenge" ng-repeat="challenge in myChallenges">
+            <div class="ui fluid row challenge"
+                 ng-click="rateChallengeView(challenge)"
+                 ng-repeat="challenge in myChallenges">
                 <div class="ui four wide center aligned column ">
                     <div class="ui vertical fluid center">
                         <i class="large {{ challenge.iconClass }} icon"></i>
@@ -85,13 +134,67 @@
                     <img src="{{ challenge.challenger.thumbnailUrl }}">
                 </div>
             </div>
+            <div class="ui fluid row challenge"
+                 ng-click="tinderView()"
+                 ng-repeat="num in myChallengeToAdd()">
+                <div class="ui four wide center aligned column ">
+                    <div class="ui vertical fluid center">
+                        <i class="large coffee icon"></i>
+                    </div>
+                </div>
+                <div class="ui twelve wide column">
+                    Add Dynerd <i class="large coffee icon"></i>
+                </div>
+            </div>
         </div>
+    </div>
 
+
+    <!-- Challenge Open VIEW -->
+    <div ng-switch-when="RATE_CHALLENGE" class="rate-challenge">
+        <div class="ui huge star rating active align-center">
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+        </div>
+        <img src="{{ openedChallenge.challenger.largeThumbnailUrl }}"/>
+        <img src="{{ openedChallenge.contender.largeThumbnailUrl }}"/>
+        <div class="ui align-center huge star rating active">
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+            <i class="icon"></i>
+        </div>
+    </div>
+
+    <!-- Details View -->
+    <div ng-switch-when="DETAILS" class="tinder">
+        <img src="{{ openedChallenge.challenger.largeThumbnailUrl }}"/>
+        <img src="{{ openedChallenge.contender.largeThumbnailUrl }}"/>
     </div>
 
     <!-- ATE VIEW -->
-    <div ng-switch-when="ATE">
-        I already ate
+    <div ng-switch-when="ATE" class="ate-view">
+        <div class="ui middle aligned column grid">
+            <div class="ui fluid row challenge"
+                 ng-click="detailsView(challenge)"
+                 ng-repeat="challenge in completedChallenges">
+                <div class="ui four wide center aligned column ">
+                    <div class="ui vertical fluid center">
+                        <i class="large {{ challenge.iconClass }} icon"></i>
+                    </div>
+                </div>
+                <div class="ui six wide column">
+                    <img src="{{ challenge.contender.smallThumbnailUrl }}">
+                </div>
+                <div class="ui six wide column">
+                    <img src="{{ challenge.challenger.smallThumbnailUrl }}">
+                </div>
+            </div>
+        </div>
     </div>
 
 

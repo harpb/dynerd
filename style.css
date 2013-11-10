@@ -69,6 +69,10 @@ html, body{
     height: 125px;
 }
 
+.ate .row{
+    height: 62px;
+}
+
 .medium.text{
     font-size: 18px;
 }
@@ -79,4 +83,12 @@ html, body{
 
 .challenge.row{
     margin-bottom: 3px !important;
+}
+
+.rate-challenge .rating{
+    width: 100%;
+}
+
+.rate-challenge .ui.huge.rating .icon {
+    font-size: 3rem;
 }
