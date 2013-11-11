@@ -113,8 +113,17 @@ body {
   margin-left: -30px !important;
 }
 /** ate view **/
-.ate .row {
+.ate-view .row {
   height: 62px;
+}
+.ate-view .row .check.icon {
+  position: absolute;
+  margin-top: 15px !important;
+  margin-left: 45px !important;
+}
+.ate-view .clearing.ui {
+  margin-top: 15px !important;
+  margin-left: -15px !important;
 }
 .medium.text {
   font-size: 18px;
@@ -148,6 +157,7 @@ body {
 .item {
   background: rgba(0, 0, 0, 0.75);
   background: rgba(255, 255, 255, 0.75);
+  color: black;
 }
 .item .header {
   padding: 4px 8px;
@@ -165,5 +175,4 @@ body {
   height: 119px;
   margin-top: 10px !important;
   padding: 4px 8px;
-  color: black;
 }

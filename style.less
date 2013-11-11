@@ -125,8 +125,19 @@ html, body {
 }
 
 /** ate view **/
-.ate .row {
+.ate-view .row {
     height: 62px;
+    .check.icon{
+        position: absolute;
+        margin-top: 15px !important;
+        margin-left: 45px !important;
+    }
+}
+
+
+.ate-view .clearing.ui {
+    margin-top: 15px !important;
+    margin-left: -15px !important;
 }
 
 .medium.text {
@@ -170,8 +181,9 @@ html, body {
 
 .item {
     background: rgba(0, 0, 0, .75);
+    //    color: #fff;
     background: rgba(255, 255, 255, .75);
-
+    color: black;
     .header {
         padding: 4px 8px;
         .meta {
@@ -190,7 +202,6 @@ html, body {
         height: 119px;
         margin-top: 10px !important;
         padding: 4px 8px;
-        color: black;
 //        background: rgba(0, 0, 0, .5);
     }
 }

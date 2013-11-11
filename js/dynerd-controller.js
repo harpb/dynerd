@@ -176,22 +176,22 @@ var DynerdListCtrl = function($scope, $localStorage, $sessionStorage) {
     $scope.user = users[0]
 
     $scope.ratings = [
-        {
-            accepted: true
-            , amount: {
-                challenger: null
-                , challenger_created: 'Nov 10, 2013'
-                , contender: null
-                , contender_created: 'Nov 10, 2013'
-            }
-            , contenderWin: true
-            , challenge: challenges[0]
-            , challengeId: 1
-            , completed: false
-            , created: 'Nov 3, 2013'
-            , id: 1
-            , userId:1
-        }
+//        {
+//            accepted: true
+//            , amount: {
+//                challenger: 3
+//                , challenger_created: 'Nov 10, 2013'
+//                , contender: 4
+//                , contender_created: 'Nov 10, 2013'
+//            }
+//            , contenderWin: true
+//            , challenge: challenges[0]
+//            , challengeId: 1
+//            , completed: true
+//            , created: 'Nov 3, 2013'
+//            , id: 1
+//            , userId:1
+//        }
     ]
 
     $scope.tinderChallenge = function(){
@@ -255,7 +255,10 @@ var DynerdListCtrl = function($scope, $localStorage, $sessionStorage) {
         $scope.showFooter = false;
     }
     var createRating = function(challenge, accepted){
-        var newRatingId = _.last($scope.ratings).id + 1;
+        var newRatingId = 1;
+        if($scope.ratings.length){
+            newRatingId = _.last($scope.ratings).id + 1;
+        }
         var rating = {
             accepted: accepted
             , challenge: challenge
@@ -327,6 +330,12 @@ var DynerdListCtrl = function($scope, $localStorage, $sessionStorage) {
     $scope.checkRatingCompleted = function(){
         if(!$scope.activeRating.amount.challenger || !$scope.activeRating.amount.contender){
             return false;
+        }
+        if($scope.activeRating.amount.challenger > $scope.activeRating.amount.contender){
+            $scope.activeRating.contenderWin = false;
+        }
+        else{
+            $scope.activeRating.contenderWin = true;
         }
 
         $scope.completedChallenge($scope.activeRating);

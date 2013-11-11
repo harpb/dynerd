@@ -124,6 +124,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="ui clearing row">
+                    <i class="circular inverted blue bolt icon"></i>
+                </div>
                 <div class="ui clickable cube shape" semantic-cube>
                     <div class="sides">
                         <div class="active side">
@@ -185,13 +188,13 @@
                         </div>
                     </div>
                     <div class="ui six wide column">
-                        <img src="{{ rating.challenge.contender.thumbnailUrl }}">
+                        <img src="{{ rating.challenge.challenger.thumbnailUrl }}">
                     </div>
                     <div class="ui clearing column">
                         <i class="large circular inverted blue bolt icon"></i>
                     </div>
                     <div class="ui six wide column">
-                        <img src="{{ rating.challenge.challenger.thumbnailUrl }}">
+                        <img src="{{ rating.challenge.contender.thumbnailUrl }}">
                     </div>
                 </div>
                 <div class="ui fluid vertical menu no-margin">
@@ -298,6 +301,15 @@
                                                     <i class="circular inverted teal check icon" ng-if="!activeRating.contenderWin"></i>
                                                     <i class="circular inverted red close icon" ng-if="activeRating.contenderWin"></i>
                                                 </div>
+                                                <div class="ui large star rating align-center"
+                                                     semantic-rating
+                                                     ng-model="activeRating.amount.challenger">
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                </div>
                                             </div>
                                             <div class="ui column">
                                                 <div class="align-center large bottom-margin">Community</div>
@@ -350,6 +362,15 @@
                                                     <i class="circular inverted teal check icon" ng-if="activeRating.contenderWin"></i>
                                                     <i class="circular inverted red remove icon" ng-if="!activeRating.contenderWin"></i>
                                                 </div>
+                                                <div class="ui large star rating align-center"
+                                                     semantic-rating
+                                                     ng-model="activeRating.amount.contender">
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                    <i class="icon"></i>
+                                                </div>
                                             </div>
                                             <div class="ui column">
                                                 <div class="align-center large bottom-margin">Community</div>
@@ -398,10 +419,15 @@
                         </div>
                     </div>
                     <div class="ui six wide column">
-                        <img src="{{ rating.challenge.contender.smallThumbnailUrl }}">
+                        <i class="circular inverted teal check icon" ng-if="!rating.contenderWin"></i>
+                        <img src="{{ rating.challenge.challenger.smallThumbnailUrl }}">
+                    </div>
+                    <div class="ui clearing column">
+                        <i class="circular inverted blue bolt icon"></i>
                     </div>
                     <div class="ui six wide column">
-                        <img src="{{ rating.challenge.challenger.smallThumbnailUrl }}">
+                        <i class="circular inverted teal check icon" ng-if="rating.contenderWin"></i>
+                        <img src="{{ rating.challenge.contender.smallThumbnailUrl }}">
                     </div>
                 </div>
             </div>
